@@ -18,7 +18,7 @@ app.get('/ui/madi.png', function (req, res) {
 }); 
 
 app.get('/article-one', function (req, res){
-  res.send('Article One requested and served')
+  res.send('Article One requested and served');
 });
 
 app.get('/article-two', function (req, res) {
