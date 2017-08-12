@@ -5,6 +5,68 @@ var path = require('path');
 var app = express();
 app.use(morgan('combined'));
 
+var articleOne = {
+    title: 'Article One | Aruna Bhamidipati',
+    date: 'Aug 12, 2017',
+    heading:'Article One',
+    content:`<div>
+                <h1> Personal</h1>
+                <p> My Name is Arun. I did most of my education in Andhra Pradesh. I did my masters from University Roorkee (IIT Roorkee now).  </p>
+                <h1> Professional </h1>
+                <p> I have nearly 17 years of experience as a designer and developer in Data and ETL space. I am also good in Unix, and Java development. Followng are the list of companies and Projects I worked for</p>
+                
+                <ol>
+                    <li>
+                        TCS -- ISBS
+                    </li>
+                    <li> Axa Insurance -- AMI</li>
+                    <li>Prudential     -- Pensions Migration</li>
+                    <li>Credit Suisse  -- Opera </li>
+                    <li>UBS            -- HR DW </li>
+                    <li>Betfair        -- BI Datawarehouse</li>
+                    <li>Credit Suisse  -- DAL</li>
+                    <li>HSBC           -- CDO, Data Quality</li>
+                    <li>Credit Suisse  -- DAL</li>
+                    <li>UBS            -- Cash Equities DW, MiFiD II</li>
+                </ol>
+            </div>`
+};
+
+function createTemplate(data){
+    
+    title = data.title;
+    heading = data.heading;
+    date = data.date;
+    content = data.content;
+    var htmlTemplate = `
+    <html>
+        
+        <head>
+            <title> 
+                ${title}
+            </title>
+            <meta name="viewport" content="width=device-width, initial-scale=1" />
+            <link href="ui/style.css" rel="stylesheet" />
+        </head>
+        <body>
+            <div class="container"> 
+                <div >
+                    <a href="/">Home</a>
+                </div>
+                <hr/>
+                <h3> ${heading}</h3>
+                <div>
+                    ${date}
+                </div>
+                ${content}
+        </body>
+    </html>
+    
+    `;
+}
+
+
+
 app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'index.html'));
 });
@@ -18,7 +80,7 @@ app.get('/ui/madi.png', function (req, res) {
 }); 
 
 app.get('/article-one', function (req, res){
-  res.sendFile(path.join(__dirname, 'ui', 'article-one.html'));
+  res.send(createTemplate(articleOne));
 });
 
 app.get('/article-two', function (req, res) {
