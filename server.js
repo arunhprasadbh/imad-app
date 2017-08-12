@@ -5,33 +5,54 @@ var path = require('path');
 var app = express();
 app.use(morgan('combined'));
 
-var articleOne = {
-    title: 'Article One | Aruna Bhamidipati',
-    date: 'Aug 12, 2017',
-    heading:'Article One',
-    content:`<div>
-                <h1> Personal</h1>
-                <p> My Name is Arun. I did most of my education in Andhra Pradesh. I did my masters from University Roorkee (IIT Roorkee now).  </p>
-                <h1> Professional </h1>
-                <p> I have nearly 17 years of experience as a designer and developer in Data and ETL space. I am also good in Unix, and Java development. Followng are the list of companies and Projects I worked for</p>
+var articles = {
+     articleOne : {
+        title: 'Article One | Aruna Bhamidipati',
+        date: 'Aug 12, 2017',
+        heading:'Article One',
+        content:`<div>
+                    <h1> Personal</h1>
+                    <p> My Name is Arun. I did most of my education in Andhra Pradesh. I did my masters from University Roorkee (IIT Roorkee now).  </p>
+                    <h1> Professional </h1>
+                    <p> I have nearly 17 years of experience as a designer and developer in Data and ETL space. I am also good in Unix, and Java development. Followng are the list of companies and Projects I worked for</p>
+                    
+                    <ol>
+                        <li>
+                            TCS -- ISBS
+                        </li>
+                        <li> Axa Insurance -- AMI</li>
+                        <li>Prudential     -- Pensions Migration</li>
+                        <li>Credit Suisse  -- Opera </li>
+                        <li>UBS            -- HR DW </li>
+                        <li>Betfair        -- BI Datawarehouse</li>
+                        <li>Credit Suisse  -- DAL</li>
+                        <li>HSBC           -- CDO, Data Quality</li>
+                        <li>Credit Suisse  -- DAL</li>
+                        <li>UBS            -- Cash Equities DW, MiFiD II</li>
+                    </ol>
+                </div>`
+    },
+    
+     articleTwo: {
+        title: 'Article Two | Aruna Bhamidipati',
+        date: 'Aug 10, 2017',
+        heading:'Article Three',
+        content:`<div>
                 
-                <ol>
-                    <li>
-                        TCS -- ISBS
-                    </li>
-                    <li> Axa Insurance -- AMI</li>
-                    <li>Prudential     -- Pensions Migration</li>
-                    <li>Credit Suisse  -- Opera </li>
-                    <li>UBS            -- HR DW </li>
-                    <li>Betfair        -- BI Datawarehouse</li>
-                    <li>Credit Suisse  -- DAL</li>
-                    <li>HSBC           -- CDO, Data Quality</li>
-                    <li>Credit Suisse  -- DAL</li>
-                    <li>UBS            -- Cash Equities DW, MiFiD II</li>
-                </ol>
-            </div>`
+                    <p> This is Article three</p>
+                    
+                </div>`
+    },
+    articleThree : {
+                title: 'Article Three | Aruna Bhamidipati',
+        date: 'Aug 10, 2017',
+        heading:'Article Three',
+        content:`<div>
+                    <p>This is Article Three</p>
+                    
+                </div>`
+    }
 };
-
 function createTemplate(data){
     
     title = data.title;
@@ -80,17 +101,18 @@ app.get('/ui/madi.png', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'madi.png'));
 }); 
 
-app.get('/article-one', function (req, res){
-  res.send(createTemplate(articleOne));
+app.get('/:articleName', function (req, res){
+    var articleName=req.params.articleName;
+  res.send(createTemplate(articleName));
 });
 
-app.get('/article-two', function (req, res) {
-  res.sendFile(path.join(__dirname, 'ui', 'article-two.html'));
-}); 
+//app.get('/article-two', function (req, res) {
+//  res.sendFile(path.join(__dirname, 'ui', 'article-two.html'));
+//}); 
 
-app.get('/article-three', function (req, res) {
-  res.sendFile(path.join(__dirname, 'ui', 'article-three.html'));
-}); 
+//app.get('/article-three', function (req, res) {
+//  res.sendFile(path.join(__dirname, 'ui', 'article-three.html'));
+//}); 
 // Do not change port, otherwise your app won't run on IMAD servers
 // Use 8080 only for local development if you already have apache running on 80
 
