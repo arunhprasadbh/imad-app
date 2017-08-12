@@ -17,9 +17,9 @@ app.get('/ui/madi.png', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'madi.png'));
 }); 
 
-app.get('/article-one', function (req, res) {
-  res.send('Article One invoked');
-}); 
+app.get('/article-one', function (req, res){
+  res.send('Article One requested and served')
+});
 
 app.get('/article-two', function (req, res) {
   res.send('Article One invoked');
