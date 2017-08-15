@@ -46,6 +46,7 @@ submit.onclick = function() {
           if(request2.status === 200){
               //add code to get the response
               var names = JSON.parse(request2.responsetext);
+              console.log('response text is:' + names);
               var list = '';
               for (i = 0; i < names.length; i++){
                    list +=  '<li>' + names[i] + '</li>';
