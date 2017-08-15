@@ -24,9 +24,6 @@ counterButton.onclick = function() {
     // Capture the response and store the result in a variable
     
     // Render the variable in the 
-    var span = document.getElementById('count'); 
-    counter = counter + 1;
-    span.innerHTML = counter.toString();
     
 };
 console.log('Check 2');
