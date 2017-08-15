@@ -115,6 +115,16 @@ app.get('/:articleName', function (req, res){
   res.send(createTemplate(articles[articleName]));
 });
 
+var names = [];
+app.get('/submit_btn/:name', function(req, res){
+   //Get the name
+   var name = req.params.name;
+   //Add name to variable
+   names.push(name);
+   res.send(JASON.stringify(names));
+   
+   //Return all the names
+});
 //app.get('/article-two', function (req, res) {
 //  res.sendFile(path.join(__dirname, 'ui', 'article-two.html'));
 //}); 
