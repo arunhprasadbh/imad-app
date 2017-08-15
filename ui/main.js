@@ -1,20 +1,6 @@
 console.log('Loaded!');
 
 
-var imgelement = document.getElementById('madi');
-
-var marginLeft = 0;
-
-function moveRight(){
-    marginLeft = marginLeft + 1;
-    imgelement.style.marginLeft = marginLeft + 'px';
-}
-
-imgelement.onclick = function () {
-    var interval = setInterval(moveRight, 50);
-
-};
-
 // Counter Button Logic
 
 var counterButton = document.getElementById('counter');
@@ -29,4 +15,19 @@ counterButton.onclick = function() {
     alert('I am in Rendering Section');
     span.innerHtml(counter.toString);
     
+};
+console.log('Check 2');
+
+var imgelement = document.getElementById('madi');
+
+var marginLeft = 0;
+
+function moveRight(){
+    marginLeft = marginLeft + 1;
+    imgelement.style.marginLeft = marginLeft + 'px';
+}
+
+imgelement.onclick = function () {
+    var interval = setInterval(moveRight, 50);
+
 };
