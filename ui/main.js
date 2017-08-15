@@ -49,7 +49,7 @@ submit.onclick = function() {
         list +=  '<li>' + names[i] + '</li>';
     }
     var ui = document.getElementById('uilist');
-    ui.innerHtml = list;
+    ui.innerHTML = list;
 };
 
 console.log('Check 2');
