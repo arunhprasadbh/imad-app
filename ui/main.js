@@ -5,7 +5,7 @@ console.log('Loaded!');
 
 var counterButton = document.getElementById('counter');
 console.log('value of counterbutton is' + counterButton);
-var span = document.getElementById('count'); 
+
 console.log('value of span is' + span);
 var counter = 1;
 counterButton.onclick = function() {
@@ -14,6 +14,8 @@ counterButton.onclick = function() {
     // Capture the response and store the result in a variable
     
     // Render the variable in the 
+    var span = document.getElementById('count'); 
+    counter = counter + 1;
     alert('I am in Rendering Section');
     span.innerHtml(counter.toString);
     
