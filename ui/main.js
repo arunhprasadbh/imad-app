@@ -4,6 +4,7 @@ console.log('Loaded!');
 // Counter Button Logic
 
 var counterButton = document.getElementById('counter');
+conslole.log('value of counterbutton is' + counterButton);
 var span = document.getElementById('count'); 
 var counter = 1;
 counterButton.onclick = function() {
