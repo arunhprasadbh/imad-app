@@ -45,7 +45,7 @@ submit.onclick = function() {
       if(request2.readyState === XMLHttpRequest.DONE){
           if(request2.status === 200){
               //add code to get the response
-              var names = JSON.parse(request2.responsetext);
+              var names = JSON.parse(request2.responseText);
               console.log('response text is:' + names);
               var list = '';
               for (i = 0; i < names.length; i++){
