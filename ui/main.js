@@ -13,7 +13,7 @@ counterButton.onclick = function() {
     var span = document.getElementById('count'); 
     counter = counter + 1;
     alert('I am in Rendering Section');
-    span.innerHtml(counter.toString);
+    span.innerHTML = counter.toString;
     
 };
 console.log('Check 2');
