@@ -2,8 +2,7 @@ console.log('Loaded!');
 
 
 // Counter Button Logig
-var counterButton = document.getElementById('counter');
-var counter = 1;
+var counter = 0;
 counterButton.onclick = function() {
     // Make a request to the end point counter
     
@@ -12,7 +11,6 @@ counterButton.onclick = function() {
     // Render the variable in the 
     var span = document.getElementById('count'); 
     counter = counter + 1;
-    alert('I am in Rendering Section');
     span.innerHTML = counter.toString;
     
 };
