@@ -38,9 +38,10 @@ submit.onclick = function() {
     console.log('nameInput is:' + nameInput);
     console.log('name2 is:' + name2);
     console.log('name submitted is: ' + name2);
+    
     // Make a call to server with name.
     var request2= new XMLHttpRequest();
-    request2.onreadystatuschange = function(){
+    request2.onreadystatechange = function(){
       var request2 = new XMLHttpRequest();
       
       if(request2.readyState === XMLHttpRequest.DONE){
