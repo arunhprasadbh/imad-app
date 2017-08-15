@@ -12,8 +12,8 @@ counterButton.onclick = function() {
     // Render the variable in the 
     var span = document.getElementById('count'); 
     counter = counter + 1;
-    alert ('counter = ' + counter.tostring())
-    span.innerHTML = counter.tostring();
+    alert ('counter = ' + counter.toString())
+    span.innerHTML = counter.toString();
     
 };
 console.log('Check 2');
