@@ -29,27 +29,28 @@ var nameInput= document.getElementById('name');
 var name = nameInput.value;
 var submit = document.getElementById('submit_btn');
 
-// Make a call to server with name.
-var request2= new XMLHttpRequest();
-request2.onreadystatuschange = function(){
-  if(request2.readyState === XMLHttpRequest.DONE){
-      if(request2.status === 200){
-          //add code to get the response
-          var names = request2.responseText;
-      }
-  }  
-};
 
 // Render a list of names 
 submit.onclick = function() {
-    // Define a array variable.
-    var names = ['name 1', 'name 2', 'name 3', 'name 4'];
-    var list = '';
-    for (i = 0; i < names.length; i++){
-        list +=  '<li>' + names[i] + '</li>';
-    }
-    var ui = document.getElementById('uilist');
-    ui.innerHTML = list;
+
+    
+    // Make a call to server with name.
+    var request2= new XMLHttpRequest();
+    request2.onreadystatuschange = function(){
+      if(request2.readyState === XMLHttpRequest.DONE){
+          if(request2.status === 200){
+              //add code to get the response
+              var names = JSON.parse(request2.responsetext);
+              var list = '';
+              for (i = 0; i < names.length; i++){
+                   list +=  '<li>' + names[i] + '</li>';
+              }
+              var ui = document.getElementById('uilist');
+              ui.innerHTML = list;
+          }
+      }  
+    };
+    
 };
 
 console.log('Check 2');
