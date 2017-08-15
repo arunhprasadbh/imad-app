@@ -37,6 +37,8 @@ submit.onclick = function() {
     // Make a call to server with name.
     var request2= new XMLHttpRequest();
     request2.onreadystatuschange = function(){
+      var request2 = new XMLHttpRequest();
+      
       if(request2.readyState === XMLHttpRequest.DONE){
           if(request2.status === 200){
               //add code to get the response
@@ -49,6 +51,9 @@ submit.onclick = function() {
               ui.innerHTML = list;
           }
       }  
+      
+      request2.open('GET','http://arunabhamidipati.imad.hasura-app.io/submit_name/'+name, true);
+      request2.send(null);
     };
     
 };
