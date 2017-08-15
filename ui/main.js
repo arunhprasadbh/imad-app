@@ -53,7 +53,7 @@ submit.onclick = function() {
               var ui = document.getElementById('uilist');
               ui.innerHTML = list;
           }
-      }  
+      }  ;
       console.log('name2 is: ' + name2);
       request2.open('GET', 'http://arunabhamidipati.imad.hasura-app.io/submit_name?name=' + name2, true);
       request2.send(null);
