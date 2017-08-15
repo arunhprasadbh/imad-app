@@ -116,9 +116,9 @@ app.get('/:articleName', function (req, res){
 });
 
 var names = [];
-app.get('/submit_name/:name', function(req, res){
+app.get('/submit_name/?name', function(req, res){
    //Get the name
-   var name = req.params.name;
+   var name = req.query.name;
    //Add name to variable
    names.push(name);
    res.send(JSON.stringify(names));
