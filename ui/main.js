@@ -6,7 +6,7 @@ console.log('Loaded!');
 var counterButton = document.getElementById('counter');
 counterButton.onclick = function() {
     // Make a request to the end point counter
-    var request = XMLHttpRequest();
+    var request = new XMLHttpRequest();
     request.onreadystatechange = function () {
         if(request.readyState === XMLHttpRequest.DONE){
             if(request.status === 200){
