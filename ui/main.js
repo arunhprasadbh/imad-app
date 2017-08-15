@@ -2,10 +2,24 @@ console.log('Loaded!');
 
 
 // Counter Button Logig
-var counter = 0;
+
 var counterButton = document.getElementById('counter');
 counterButton.onclick = function() {
     // Make a request to the end point counter
+    var request = XMLHttpRequest();
+    request.onreadystatechange = function () {
+        if(request.readyState === XMLHttpRequest.DONE){
+            if(request.status === 200){
+                var counter    = request.responseText;
+                var span       = document.getElementById('count');
+                span.innerHTML = counter.toString();
+            }
+        }
+    };
+    
+    request.open(GET, 'arunabhamidipati.imad.hasura-app.io/count');
+    request.send(null);
+    
     
     // Capture the response and store the result in a variable
     
