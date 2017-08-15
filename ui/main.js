@@ -42,8 +42,6 @@ submit.onclick = function() {
     // Make a call to server with name.
     var request2= new XMLHttpRequest();
     request2.onreadystatechange = function(){
-      var request2 = new XMLHttpRequest();
-      
       if(request2.readyState === XMLHttpRequest.DONE){
           if(request2.status === 200){
               //add code to get the response
