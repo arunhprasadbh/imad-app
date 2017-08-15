@@ -21,7 +21,7 @@ counterButton.onclick = function() {
 console.log('Check 2');
 
 var imgelement = document.getElementById('madi');
-
+console.log('value of imageelement is' + imgelement);
 var marginLeft = 0;
 
 function moveRight(){
