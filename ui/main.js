@@ -20,12 +20,13 @@ console.log('Check 2');
 var imgelement = document.getElementById('madi');
 console.log('value of imageelement is' + imgelement);
 var marginLeft = 0;
+console.log('Check 3');
 
 function moveRight(){
     marginLeft = marginLeft + 1;
     imgelement.style.marginLeft = marginLeft + 'px';
 }
-
+console.log('check 4');
 imgelement.onclick = function () {
     var interval = setInterval(moveRight, 50);
 
