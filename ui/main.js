@@ -18,9 +18,8 @@ counterButton.onclick = function() {
         }
     };
     
-    request.open('GET', 'arunabhamidipati.imad.hasura-app.io/count', true);
+    request.open('GET', 'http://arunabhamidipati.imad.hasura-app.io/counter', true);
     request.send(null);
-    
     
     // Capture the response and store the result in a variable
     
