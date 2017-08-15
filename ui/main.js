@@ -25,17 +25,18 @@ counterButton.onclick = function() {
 };
 
 //Names logic
-var nameInput= document.getElementById('name');
 
-var name2=nameInput.value;
 var submit = document.getElementById('submit_btn');
 
-console.log('nameInput is:' + nameInput);
-console.log('name2 is:' + name2);
+
 console.log('submit is:' + submit);
 // Render a list of names 
 submit.onclick = function() {
-
+    var nameInput= document.getElementById('name');
+    
+    var name2=nameInput.value;
+    console.log('nameInput is:' + nameInput);
+    console.log('name2 is:' + name2);
     console.log('name submitted is: ' + name2);
     // Make a call to server with name.
     var request2= new XMLHttpRequest();
