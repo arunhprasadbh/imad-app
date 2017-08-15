@@ -41,14 +41,16 @@ request2.onreadystatuschange = function(){
 };
 
 // Render a list of names 
-var names = ['name 1', 'name 2', 'name 3', 'name 4'];
-var list = '';
-for (i = 0; i < names.length; i++){
-    list +=  '<li>' + names[i] + '</li>';
-}
-var ui = document.getElementById('uilist');
-ui.innerHtml = list;
-
+submit.onclick = function() {
+    // Define a array variable.
+    var names = ['name 1', 'name 2', 'name 3', 'name 4'];
+    var list = '';
+    for (i = 0; i < names.length; i++){
+        list +=  '<li>' + names[i] + '</li>';
+    }
+    var ui = document.getElementById('uilist');
+    ui.innerHtml = list;
+};
 
 console.log('Check 2');
 
