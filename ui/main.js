@@ -1,10 +1,8 @@
 console.log('Loaded!');
 
 
-// Counter Button Logic
-
+// Counter Button Logig
 var counterButton = document.getElementById('counter');
-
 var counter = 1;
 counterButton.onclick = function() {
     // Make a request to the end point counter
