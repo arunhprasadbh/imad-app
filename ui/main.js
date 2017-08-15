@@ -18,7 +18,7 @@ imgelement.onclick = function () {
 // Counter Button Logic
 
 var counterButton = document.getElementById('counter');
-var span = document.getElementById('count');
+var span = document.getElementById('count'); 
 var counter = 1;
 counterButton.onclick = function() {
     // Make a request to the end point counter
