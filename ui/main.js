@@ -21,11 +21,35 @@ counterButton.onclick = function() {
     request.open('GET', 'http://arunabhamidipati.imad.hasura-app.io/counter', true);
     request.send(null);
     
-    // Capture the response and store the result in a variable
-    
-    // Render the variable in the 
     
 };
+
+//Names logic
+var nameInput= document.getElementById('name');
+var name = nameInput.value;
+var submit = document.getElementById('submit_btn');
+
+// Make a call to server with name.
+var request2= new XMLHttpRequest();
+request2.onreadystatuschange = function(){
+  if(request2.readyState === XMLHttpRequest.DONE){
+      if(request2.status === 200){
+          //add code to get the response
+          var names = request2.responseText;
+      }
+  }  
+};
+
+// Render a list of names 
+var names = ['name1', 'name2', 'name3', 'name4'];
+var list = '';
+for (i = 0; i < names.length; i++){
+    list +=  '<li>' + names[i] + '</li>';
+}
+var ui = document.getElementById('uilist');
+ui.innerHtml = list;
+
+
 console.log('Check 2');
 
 var imgelement = document.getElementById('madi');
