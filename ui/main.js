@@ -26,6 +26,7 @@ counterButton.onclick = function() {
     // Capture the response and store the result in a variable
     
     // Render the variable in the 
+    alert('I am in Rendering Section');
     span.innerHtml(counter.toString);
     
 };
