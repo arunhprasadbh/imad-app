@@ -116,12 +116,12 @@ app.get('/:articleName', function (req, res){
 });
 
 var names = [];
-app.get('/submit_btn/:name', function(req, res){
+app.get('/submit_name/:name', function(req, res){
    //Get the name
    var name = req.params.name;
    //Add name to variable
    names.push(name);
-   res.send(JASON.stringify(names));
+   res.send(JSON.stringify(names));
    
    //Return all the names
 });
