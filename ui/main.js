@@ -26,14 +26,15 @@ counterButton.onclick = function() {
 
 //Names logic
 var nameInput= document.getElementById('name');
-var name = nameInput.value;
+
+var name2=nameInput.value;
 var submit = document.getElementById('submit_btn');
 
 
 // Render a list of names 
 submit.onclick = function() {
 
-    
+    console.log('name submitted is: ' + name2);
     // Make a call to server with name.
     var request2= new XMLHttpRequest();
     request2.onreadystatuschange = function(){
@@ -52,7 +53,7 @@ submit.onclick = function() {
           }
       }  
       
-      request2.open('GET','http://arunabhamidipati.imad.hasura-app.io/submit_name/'+name, true);
+      request2.open('GET','http://arunabhamidipati.imad.hasura-app.io/submit_name/' + name2, true);
       request2.send(null);
     };
     
