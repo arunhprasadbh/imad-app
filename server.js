@@ -98,6 +98,19 @@ function createTemplate(data){
     return htmlTemplate;
 }
 var counter = 0; 
+
+//Test Db Connection
+app.get('/test_db', function(req, res){
+    pool.query('select * from test1', function(err, result){
+        if(err){
+            res.status(500).send(err.toString());
+        }else{
+            res.send(JSON.stringfy(result));
+        }
+    });
+    
+});
+
 app.get('/counter', function(req, res){
    counter = counter + 1; 
    res.send(counter.toString());
@@ -138,17 +151,7 @@ app.get('/:articleName', function (req, res){
 });
 
 
-//Test Db Connection
-app.get('/test_db', function(req, res){
-    pool.query('select * from test1', function(err, result){
-        if(err){
-            res.status(500).send(err.toString());
-        }else{
-            res.send(JSON.stringfy(result));
-        }
-    });
-    
-});
+
 
 
 //app.get('/article-two', function (req, res) {
