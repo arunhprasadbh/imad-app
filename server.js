@@ -100,7 +100,8 @@ function createTemplate(data){
 var counter = 0; 
 
 //Test Db Connection
-app.get('/test_db', function(req, res){
+app.get('/testdb1', function(req, res){
+    console.log('iam in test db1');
     pool.query('select * from test1', function(err, result){
         if(err){
             res.status(500).send(err.toString());
