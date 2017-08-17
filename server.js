@@ -108,6 +108,8 @@ app.get('/test-db1', function(req, res){
     pool.query('select * from test', function(err, result){
         if(err){
             res.status(500).send(err.toString());
+        }else{
+            res.send(JSON.stringfy(result));
         }
     });
   
