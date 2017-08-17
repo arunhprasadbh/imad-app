@@ -106,7 +106,9 @@ var counter = 0;
 //Test Db Connection
 app.get('/test-db1', function(req, res){
     pool.query('select * from test', function(err, result){
-        
+        if(err){
+            res.status(500).send(err.toString());
+        }
     });
   
   res.send('Test Db Called');
