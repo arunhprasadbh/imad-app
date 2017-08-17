@@ -5,10 +5,11 @@ var Pool = require('pg').Pool;
 
 var config = {
     user: 'arunabhamidipati',
+    database: 'arunabhamidipati',
     host:'db.imad.hasura-app.io',
-    password: process.env.DB_PASSWORD,
     port: '5432',
-    database: 'arunabhamidipati'
+    password: process.env.DB_PASSWORD
+    
 };
 
 var pool = new Pool(config);
@@ -16,20 +17,7 @@ var pool = new Pool(config);
 var app = express();
 app.use(morgan('combined'));
 
-//Test Db Connection
-app.get('/test-db1', function(req, res){
-    console.log('iam in test db1');
-   // pool.query('select * from test1', function(err, result){
-   //        console.log('I am in query');
-   //     if(err){
-   //         res.status(500).send(err.toString());
-   //     }else{
-  //          res.send(JSON.stringfy(result));
-  //      }
-  console.log('abc');
-  //  });
-    
-});
+
 
 var articles = {
      'article-one' : {
@@ -115,6 +103,22 @@ function createTemplate(data){
 var counter = 0; 
 
 
+//Test Db Connection
+app.get('/test-db1', function(req, res){
+    console.log('iam in test db1');
+   // pool.query('select * from test1', function(err, result){
+   //        console.log('I am in query');
+   //     if(err){
+   //         res.status(500).send(err.toString());
+   //     }else{
+  //          res.send(JSON.stringfy(result));
+  //      }
+  console.log('abc');
+  //  });
+  
+  res.send('Test Db Called');
+    
+});
 
 app.get('/counter', function(req, res){
    counter = counter + 1; 
