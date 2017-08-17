@@ -105,16 +105,9 @@ var counter = 0;
 
 //Test Db Connection
 app.get('/test-db1', function(req, res){
-    console.log('iam in test db1');
-   // pool.query('select * from test1', function(err, result){
-   //        console.log('I am in query');
-   //     if(err){
-   //         res.status(500).send(err.toString());
-   //     }else{
-  //          res.send(JSON.stringfy(result));
-  //      }
-  console.log('abc');
-  //  });
+    pool.query('select * from test', function(err, result){
+        
+    });
   
   res.send('Test Db Called');
     
