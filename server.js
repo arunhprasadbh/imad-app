@@ -107,6 +107,7 @@ var counter = 0;
 app.get('/test-db1', function(req, res){
     pool.query('select * from test1', function(err, result){
         if(err){
+            console.log('I am in error of pool query');
             res.status(500).send(err.toString());
         }else{
             res.send(JSON.stringfy(result));
