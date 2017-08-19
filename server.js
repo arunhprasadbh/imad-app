@@ -110,7 +110,9 @@ app.get('/test-db1', function(req, res){
             console.log('I am in error of pool query');
             res.status(500).send(err.toString());
         }else{
-            res.send(JSON.stringfy(result));
+            console.log('i am in result part of pool query');
+            //res.send(JSON.stringfy(result));
+            res.send(JSON.stringify(result));
         }
     });
   
