@@ -104,14 +104,21 @@ function createTemplate(data){
 
 var counter = 0; 
 function hash(input, salt){
+    console.log('check 2.1');
     var hashString = crypto.pbkdf2Sync(input, salt, 100, 512, 'sha512');
+    console.log('check 2.2');
+    
     return hashString;
+   // console.log('check 2.3');
 }
 
 //hash
 app.get('/hash/:input', function(req, res){
+    console.log('check 1');
     var hashedString = hash(req.param.input, 'this-is-a-randon-string');
+    console.log('check 2');
     res.send(hashedString);
+    console.log('check 3');
 });
 
 //Test Db Connection
