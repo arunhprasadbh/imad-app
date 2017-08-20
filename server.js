@@ -2,7 +2,7 @@ var express = require('express');
 var morgan = require('morgan');
 var path = require('path');
 var Pool = require('pg').Pool;
-var crypto = required('crypto');
+//var crypto = required('crypto');
 
 var config = {
     user: 'arunabhamidipati',
@@ -113,6 +113,7 @@ function hash(input, salt){
 }
 
 //hash
+/*
 app.get('/hash/:input', function(req, res){
     console.log('check 1');
     alert('check 1');
@@ -121,6 +122,7 @@ app.get('/hash/:input', function(req, res){
     res.send(hashedString);
     console.log('check 3');
 });
+*/
 
 //Test Db Connection
 app.get('/test-db1', function(req, res){
