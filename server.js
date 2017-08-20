@@ -109,7 +109,7 @@ function hash(input, salt){
     const hashString = crypto.pbkdf2Sync(input, salt, 10000, 512, 'sha512');
     console.log('check 2.2');
     
-    return hashString;
+    return hashString.toString(hex);
 
 }
 
