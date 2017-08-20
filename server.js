@@ -106,7 +106,7 @@ var counter = 0;
 function hash(input, salt){
     console.log('check 2.1');
 
-    var hashString = crypto.pbkdf2Sync(input, salt, 10000, 512, 'sha512');
+    const hashString = crypto.pbkdf2Sync(input, salt, 10000, 512, 'sha512');
     console.log('check 2.2');
     
     return hashString;
