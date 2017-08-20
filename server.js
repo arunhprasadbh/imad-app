@@ -123,6 +123,17 @@ app.get('/hash/:input', function(req, res){
     console.log('check 3');
 });
 
+app.get('/create_user', function(req, res){
+    
+    //get username and password from request
+    
+    //create a hash for the password
+    
+    //connect to databse
+    
+    //insert data to users table
+    
+});
 
 //Test Db Connection
 app.get('/test-db1', function(req, res){
