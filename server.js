@@ -116,7 +116,7 @@ function hash(input, salt){
 
 app.get('/hash/:input', function(req, res){
     console.log('check 1');
-    var hashedString = 'abc' ;  //hash(req.param.input, 'this-is-a-randon-string');
+    var hashedString =  hash(req.param.input, 'this-is-a-randon-string');
     console.log('check 2');
     res.send(hashedString);
     console.log('check 3');
